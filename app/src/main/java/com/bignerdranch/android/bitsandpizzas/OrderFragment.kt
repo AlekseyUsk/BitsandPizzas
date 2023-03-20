@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.MaterialToolbar
 
 class OrderFragment : Fragment() {
 
@@ -17,7 +20,10 @@ class OrderFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_order, container, false)
+        val view = inflater.inflate(R.layout.fragment_order, container, false)
+        val toolbar = view.findViewById<MaterialToolbar>(R.id.toolbar)
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        return view
     }
 
 }
